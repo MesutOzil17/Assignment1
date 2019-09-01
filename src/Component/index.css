@@ -1,0 +1,9 @@
+.caret {
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.node {
+    display: flex;
+    align-items: center;
+}
