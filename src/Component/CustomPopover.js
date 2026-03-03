@@ -15,6 +15,16 @@ class CustomPopover extends Component {
         });
     };
 
+    handleAddChild = addChild => {
+        const { node } = this.state;
+        addChild(node.trim());
+        this.setState({
+            node: "",
+            addInput: false,
+            editInput: false
+        });
+    };
+
     takeInput = ()=>{
         this.setState({
             addInput : true,
@@ -59,7 +69,7 @@ class CustomPopover extends Component {
                             className="btn btn-success my-2 my-sm-0"
                             type="submit"
                             style={{ marginBottom: "10px" }}
-                            onClick={() => addChild(node)}
+                            onClick={() => this.handleAddChild(addChild)}
                             disabled={node.length === 0}
                         >
                             ADD
@@ -85,7 +95,7 @@ class CustomPopover extends Component {
                             className="btn btn-success my-2 my-sm-0"
                             type="submit"
                             style={{ marginBottom: "10px" }}
-                            onClick={() => addChild(node)}
+                            onClick={() => this.handleAddChild(addChild)}
                             disabled={node.length === 0}
                         >
                             Update
